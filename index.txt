@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite: Suellen & Daniel</title>
+    <style>
+        body {
+            background-color: #f4f7f2; /* Tom de fundo suave */
+            color: #2f4f2f; /* Verde musgo do texto */
+            font-family: 'Georgia', serif;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        .convite {
+            max-width: 500px;
+            background: white;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid #d1dbd1;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 { font-family: 'Cursive', serif; font-size: 2.5em; margin-bottom: 0; }
+        .data { font-weight: bold; font-size: 1.5em; margin: 20px 0; }
+        .botoes { display: flex; flex-direction: column; gap: 10px; margin-top: 30px; }
+        .btn {
+            background-color: #4a6741;
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="convite">
+        <p>NÓS</p>
+        <h1>Suellen Barbosa & Daniel Miranda</h1>
+        <p>Convidamos vocês para serem padrinhos do nosso casamento.</p>
+        
+        <div class="data">21.11.26</div>
+        
+        <p>A cerimônia se inicia às 11:30, no Espaço Napoleão.<br>
+        Rua Rio Branco, 58</p>
+
+        <blockquote>"Completai a minha alegria... tendo o mesmo amor" <br><small>Filipenses 2:2</small></blockquote>
+
+        <div class="botoes">
+            <a href="LINK_DO_GOOGLE_MAPS" class="btn">Ver Mapa do Local</a>
+            <a href="LINK_DO_RSVP" class="btn">Confirmar Presença (RSVP)</a>
+            <a href="LINK_DA_LISTA" class="btn">Lista de Presentes (PIX)</a>
+        </div>
+    </div>
+</body>
+</html>
