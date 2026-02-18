@@ -285,7 +285,7 @@
                 try {
                     const response = await fetch(url, options);
                     if (!response.ok) {
-                        // NOVO: Pegando a mensagem de erro exata do Google
+                        // Pegando a mensagem de erro exata do Google
                         const errorData = await response.json().catch(() => ({}));
                         console.error("Detalhes do erro API:", errorData);
                         const googleErrorMessage = errorData?.error?.message || `Erro HTTP ${response.status}`;
@@ -336,8 +336,8 @@
                 }]
             };
 
-            // URL com o modelo oficial gemini-2.5-flash-preview-09-2025 que aceita a sua chave perfeitamente
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            // URL com o modelo oficial gemini-2.5-flash atualizado (sem o "-preview-09-2025")
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`;
 
             try {
                 const result = await fetchWithRetry(apiUrl, {
@@ -359,7 +359,7 @@
                 }
             } catch (error) {
                 console.error("Erro completo:", error);
-                // NOVO: Mostrando o erro real na tela para podermos investigar
+                // Mostrando o erro real na tela para podermos investigar
                 feedbackMsg.innerText = `Detalhe do Erro: ${error.message}`;
                 feedbackMsg.style.color = "#d9534f";
             } finally {
