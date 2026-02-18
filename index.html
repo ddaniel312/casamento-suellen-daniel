@@ -276,7 +276,7 @@
 
     <!-- SCRIPT DA INTEGRAÇÃO COM GEMINI API -->
     <script>
-        // ATENÇÃO: Cole a sua chave da API gerada no Google AI Studio entre as aspas abaixo
+        // A sua chave da API gerada no Google AI Studio
         const apiKey = "AIzaSyDR14e9eyYKK-NTaFPEe6HmY2Du1FmR0Z4"; 
 
         async function fetchWithRetry(url, options, retries = 5) {
@@ -285,6 +285,8 @@
                 try {
                     const response = await fetch(url, options);
                     if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({}));
+                        console.error("Detalhes do erro API:", errorData);
                         throw new Error(`Erro na API: ${response.status}`);
                     }
                     return await response.json();
@@ -332,6 +334,7 @@
                 }]
             };
 
+            // URL com o modelo oficial que funciona no GitHub Pages
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
             try {
@@ -353,8 +356,8 @@
                     throw new Error("Resposta vazia da API");
                 }
             } catch (error) {
-                console.error(error);
-                feedbackMsg.innerText = "Ops! Aconteceu um erro ao tentar gerar a mensagem. Tente novamente em alguns instantes.";
+                console.error("Erro completo:", error);
+                feedbackMsg.innerText = apiKey === "" ? "Ops! A chave API não foi colocada no código." : "Ops! Aconteceu um erro ao tentar gerar a mensagem. Tente novamente em alguns instantes.";
                 feedbackMsg.style.color = "#d9534f";
             } finally {
                 // Restaurar UI
