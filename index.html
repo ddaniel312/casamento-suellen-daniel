@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite: Suellen &amp; Daniel</title>
+    <style>
+        :root {
+            --primary-color: #4a6741;
+            --primary-hover: #3a5233;
+            --bg-color: #f4f7f2;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            font-family: "Georgia", serif;
+            color: var(--text-color);
+            margin: 0;
+        }
+        
+        .wrapper {
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .canva-embed {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 140.9524%;
+            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
+            margin-top: 1.6em;
+            margin-bottom: 0.9em;
+            overflow: hidden;
+            border-radius: 8px;
+            will-change: transform;
+            background-color: var(--card-bg);
+        }
+        
+        .canva-embed iframe {
+            position: absolute;
+            width: calc(100% + 2px);
+            height: calc(100% + 2px);
+            top: -1px;
+            left: -1px;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 0.95em;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn:disabled {
+            background-color: #9ab093;
+            cursor: not-allowed;
+        }
+
+        /* AI Feature Styles */
+        .ai-section {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.08);
+            border: 1px solid #e0e6dd;
+        }
+
+        .ai-section h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-size: 1.2em;
+            text-align: center;
+        }
+
+        .ai-section p {
+            font-size: 0.85em;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #666;
+            font-family: sans-serif;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+        }
+
+        .input-group label {
+            display: block;
+            font-size: 0.85em;
+            margin-bottom: 5px;
+            font-family: sans-serif;
+            font-weight: bold;
+        }
+
+        .input-group input, .input-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: sans-serif;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+
+        .input-group input:focus, .input-group select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(74, 103, 65, 0.2);
+        }
+
+        .result-box {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: var(--bg-color);
+            border-radius: 6px;
+            border: 1px dashed var(--primary-color);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .result-text {
+            font-style: italic;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+            line-height: 1.4;
+        }
+
+        .copy-btn {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8em;
+            font-weight: bold;
+            width: 100%;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .feedback-msg {
+            font-size: 0.8em;
+            color: #d9534f;
+            text-align: center;
+            margin-top: 10px;
+            font-family: sans-serif;
+        }
+
+        .loading-spinner {
+            display: none;
+            text-align: center;
+            font-size: 0.9em;
+            color: var(--primary-color);
+            margin-top: 10px;
+            font-family: sans-serif;
+            font-style: italic;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .credits {
+            margin-top: 20px;
+            font-size: 0.8em;
+            text-align: center;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+
+        <!-- CONVITE DO CANVA -->
+        <div class="canva-embed">
+            <iframe loading="lazy"
+                src="https://www.canva.com/design/DAHBmIDYgIk/JI-0pSgvNgektgsiTytIGw/view?embed"
+                allowfullscreen="allowfullscreen"
+                allow="fullscreen">
+            </iframe>
+        </div>
+
+        <!-- LINKS EXTRAS: MAPA, RSVP E SPOTIFY -->
+        <div class="links">
+            <a href="https://www.google.com/maps/place/napoleao+buffet/data=!4m2!3m1!1s0x94ce422b27158a29:0x2145617c3e50fcb0?sa=X&ved=1t:242&ictx=111" class="btn" target="_blank" rel="noopener">
+                📍 Ver mapa do local
+            </a>
+            <a href="https://noivos.casar.com/d-s-21-11-26/#/one-page/_start" class="btn" target="_blank" rel="noopener">
+                ✅ Confirmar presença (RSVP)
+            </a>
+            <a href="https://open.spotify.com/playlist/1MK7Lq4gvmB5H0etkXZsvt?si=1VJjJm0fQT23_70c7VsGAA" class="btn" target="_blank" rel="noopener">
+                🎵 Playlist da Festa (Spotify)
+            </a>
+        </div>
+
+        <!-- FUNCIONALIDADE IA: GERADOR DE MENSAGENS -->
+        <div class="ai-section">
+            <h3>✨ Gerador de Mensagens</h3>
+            <p>Sem inspiração para a mensagem do cartão ou do PIX? Deixe nossa IA criar uma mensagem especial para os noivos!</p>
+            
+            <div class="input-group">
+                <label for="guestRelation">Como você conhece os noivos?</label>
+                <input type="text" id="guestRelation" placeholder="Ex: Sou amiga de infância da Suellen" required>
+            </div>
+
+            <div class="input-group">
+                <label for="messageTone">Qual o tom da mensagem?</label>
+                <select id="messageTone">
+                    <option value="emocionante e carinhoso">Emocionante & Carinhoso ❤️</option>
+                    <option value="engraçado e descontraído">Engraçado & Descontraído 😄</option>
+                    <option value="formal e elegante">Formal & Elegante 🥂</option>
+                    <option value="curto e direto">Curto & Direto ⚡</option>
+                </select>
+            </div>
+
+            <button id="generateBtn" class="btn" style="width: 100%;" onclick="generateMessage()">
+                ✨ Gerar Mensagem Mágica
+            </button>
+            
+            <div id="loadingIndicator" class="loading-spinner">
+                ✨ Escrevendo com carinho...
+            </div>
+            
+            <div id="feedbackMsg" class="feedback-msg"></div>
+
+            <div id="resultBox" class="result-box">
+                <div id="generatedText" class="result-text"></div>
+                <button class="copy-btn" onclick="copyMessage()">📋 Copiar Mensagem</button>
+            </div>
+        </div>
+
+        <!-- CRÉDITOS -->
+        <p class="credits">
+            <a href="https://www.canva.com/design/DAHBmIDYgIk/JI-0pSgvNgektgsiTytIGw/view?utm_content=DAHBmIDYgIk&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+               target="_blank" rel="noopener" style="color:var(--primary-color); text-decoration:none; font-weight:bold;">
+                Convite Online Convidados
+            </a> por Suellen Barbosa
+        </p>
+    </div>
+
+    <!-- SCRIPT DA INTEGRAÇÃO COM GEMINI API -->
+    <script>
+        // A API key será injetada automaticamente pelo ambiente
+        const apiKey = ""; 
+
+        async function fetchWithRetry(url, options, retries = 5) {
+            let delay = 1000;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (!response.ok) {
+                        throw new Error(`Erro na API: ${response.status}`);
+                    }
+                    return await response.json();
+                } catch (error) {
+                    if (i === retries - 1) throw error;
+                    await new Promise(resolve => setTimeout(resolve, delay));
+                    delay *= 2; // Exponential backoff (1s, 2s, 4s, 8s, 16s)
+                }
+            }
+        }
+
+        async function generateMessage() {
+            const relationInput = document.getElementById('guestRelation').value.trim();
+            const toneInput = document.getElementById('messageTone').value;
+            const btn = document.getElementById('generateBtn');
+            const loading = document.getElementById('loadingIndicator');
+            const resultBox = document.getElementById('resultBox');
+            const feedbackMsg = document.getElementById('feedbackMsg');
+            const generatedTextDiv = document.getElementById('generatedText');
+
+            // Validação simples
+            if (!relationInput) {
+                feedbackMsg.innerText = "Por favor, diga-nos como você conhece os noivos primeiro!";
+                feedbackMsg.style.color = "#d9534f";
+                return;
+            }
+
+            // Preparar UI para carregamento
+            feedbackMsg.innerText = "";
+            resultBox.style.display = "none";
+            btn.disabled = true;
+            loading.style.display = "block";
+
+            // Prompt estruturado para o Gemini
+            const prompt = `Você é um assistente criativo ajudando um convidado a escrever uma mensagem de casamento para os noivos Suellen e Daniel.
+            O convidado descreveu sua relação com os noivos assim: "${relationInput}".
+            O tom desejado para a mensagem é: "${toneInput}".
+            
+            Por favor, escreva uma mensagem curta (máximo de 3 ou 4 frases), ideal para ser enviada junto com um presente ou transferência PIX. 
+            Não inclua placeholders como [Seu Nome]. Apenas a mensagem final pronta.`;
+
+            const payload = {
+                contents: [{
+                    parts: [{ text: prompt }]
+                }]
+            };
+
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            try {
+                const result = await fetchWithRetry(apiUrl, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                // Extrair o texto da resposta
+                const generatedText = result.candidates?.[0]?.content?.parts?.[0]?.text;
+
+                if (generatedText) {
+                    generatedTextDiv.innerText = generatedText.replace(/"/g, '').trim();
+                    resultBox.style.display = "block";
+                } else {
+                    throw new Error("Resposta vazia da API");
+                }
+            } catch (error) {
+                console.error(error);
+                feedbackMsg.innerText = "Ops! Aconteceu um erro ao tentar gerar a mensagem. Tente novamente em alguns instantes.";
+                feedbackMsg.style.color = "#d9534f";
+            } finally {
+                // Restaurar UI
+                btn.disabled = false;
+                loading.style.display = "none";
+            }
+        }
+
+        function copyMessage() {
+            const textToCopy = document.getElementById('generatedText').innerText;
+            
+            // Usando execCommand como fallback seguro para iframes
+            const textArea = document.createElement("textarea");
+            textArea.value = textToCopy;
+            
+            // Evitar rolagem na tela ao focar
+            textArea.style.top = "0";
+            textArea.style.left = "0";
+            textArea.style.position = "fixed";
+            
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+                const successful = document.execCommand('copy');
+                const feedbackMsg = document.getElementById('feedbackMsg');
+                if (successful) {
+                    feedbackMsg.innerText = "✨ Mensagem copiada com sucesso!";
+                    feedbackMsg.style.color = "#4a6741";
+                } else {
+                    feedbackMsg.innerText = "Não foi possível copiar. Por favor, selecione o texto manualmente.";
+                    feedbackMsg.style.color = "#d9534f";
+                }
+            } catch (err) {
+                console.error('Erro ao copiar', err);
+            }
+            
+            document.body.removeChild(textArea);
+        }
+    </script>
+</body>
+</html>
