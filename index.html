@@ -285,9 +285,11 @@
                 try {
                     const response = await fetch(url, options);
                     if (!response.ok) {
+                        // NOVO: Pegando a mensagem de erro exata do Google
                         const errorData = await response.json().catch(() => ({}));
                         console.error("Detalhes do erro API:", errorData);
-                        throw new Error(`Erro na API: ${response.status}`);
+                        const googleErrorMessage = errorData?.error?.message || `Erro HTTP ${response.status}`;
+                        throw new Error(googleErrorMessage);
                     }
                     return await response.json();
                 } catch (error) {
@@ -353,11 +355,12 @@
                     generatedTextDiv.innerText = generatedText.replace(/"/g, '').trim();
                     resultBox.style.display = "block";
                 } else {
-                    throw new Error("Resposta vazia da API");
+                    throw new Error("Resposta vazia da API do Google.");
                 }
             } catch (error) {
                 console.error("Erro completo:", error);
-                feedbackMsg.innerText = apiKey === "" ? "Ops! A chave API não foi colocada no código." : "Ops! Aconteceu um erro ao tentar gerar a mensagem. Tente novamente em alguns instantes.";
+                // NOVO: Mostrando o erro real na tela para podermos investigar
+                feedbackMsg.innerText = `Detalhe do Erro: ${error.message}`;
                 feedbackMsg.style.color = "#d9534f";
             } finally {
                 // Restaurar UI
